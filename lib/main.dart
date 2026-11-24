@@ -8,7 +8,7 @@ void main() {
     providers: [
       ChangeNotifierProvider(create: (context) => CounterProvider())
     ],
-    child: const MyApp()));
+    builder: (context, child) => const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
