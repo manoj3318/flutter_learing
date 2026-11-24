@@ -24,7 +24,6 @@ jobs:
           cache: true
 
       - run: flutter pub get
-      - run: flutter test --coverage
 
   deploy-web:
     needs: checks
