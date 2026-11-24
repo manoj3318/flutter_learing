@@ -34,7 +34,7 @@ permissions:
 environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      steps:
+steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
@@ -43,7 +43,7 @@ environment:
       - run: flutter pub get
       - run: flutter build web --release --base-href /${{ github.event.repository.name }}/
       - uses: actions/upload-pages-artifact@v3
-      with:
+        with:
           path: build/web
       - name: Deploy to GitHub Pages
         id: deployment
