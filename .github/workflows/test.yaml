@@ -25,6 +25,8 @@ jobs:
           cache: true
 
       - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
 
   deploy-web:
     needs: checks
@@ -54,10 +56,10 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        
-    build-android:
-     needs: checks
-     runs-on: ubuntu-latest
+
+  build-android:
+    needs: checks
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
